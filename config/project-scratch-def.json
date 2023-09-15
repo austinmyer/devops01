@@ -1,7 +1,7 @@
 {
     "orgName": "Salesforce DX Company",
     "edition": "Developer",
-    "orgPreferences" : {
+    "settings" : {
         "enabled": ["S1DesktopEnabled"]
     }
 }
