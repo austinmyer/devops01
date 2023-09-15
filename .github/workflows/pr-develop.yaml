@@ -34,7 +34,7 @@ jobs:
       run: 'sf org create scratch -f config/project-scratch-def.json -a ci_scratch -y 1'
     
     - name: Push source to scratch org
-      run: 'sfdx force:source:push -o cr_scratch'
+      run: 'sfdx force:source:push -o ci_scratch'
     
     - name: Check code coverage
       run: |
