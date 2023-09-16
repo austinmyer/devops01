@@ -34,7 +34,7 @@ jobs:
         run: 'sfdx force:source:push'
       - name: Check code coverage
         run: >
-          sfdx force:apex:test:run --codecoverage --resultformat json
+          sf apex test run -o ci_scratch --codecoverage --resultformat json
           --synchronous --testlevel RunLocalTests --wait 10 > tests.json
 
           coverage=$(jq .result.summary.orgWideCoverage tests.json | grep -Eo
