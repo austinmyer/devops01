@@ -38,10 +38,10 @@ jobs:
     
     - name: Check code coverage
       run: |
-        sfdx force:apex:test:run --codecoverage --resultformat json --synchronous --testlevel RunLocalTests --wait 10 > tests.json
+        sfdx force:apex:test:run --codecoverage --resultformat json --synchronous -o ci_scratch --testlevel RunLocalTests --wait 10 > tests.json
         coverage=$(jq .result.summary.orgWideCoverage tests.json | grep -Eo "[[:digit:]]+")
         test $coverage -ge 75
     
     - name: Delete scratch org
       if: always()
-      run: 'sfdx force:org:delete -p -u ci_scratch'
+      run: 'sfdx force org delete -o ci_scratch'
