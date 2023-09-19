@@ -38,7 +38,7 @@ jobs:
     
     - name: Check code coverage
       run: |
-        sfdx force:apex:test:run --codecoverage --resultformat json --synchronous -o ci_scratch --testlevel RunLocalTests --wait 10 > tests.json
+        sf apex test run --code-coverage --result-format json --synchronous -o ci_scratch --test-level RunLocalTests --wait 20 > tests.json
         coverage=$(jq .result.summary.orgWideCoverage tests.json | grep -Eo "[[:digit:]]+")
         test $coverage -ge 75
     
