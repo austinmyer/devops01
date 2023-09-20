@@ -36,12 +36,11 @@ jobs:
     - name: Push source to scratch org
       run: 'sfdx force:source:push -o ci_scratch'
     
-    - name: Check code coverage
+    - name:  Check code coverage
       shell: bash
       run:  |
-            coverage=$('sfdx force:apex:test:run --code-coverage --result-format human --target-org ci_scratch --testlevel RunLocalTests --wait 10') 
-            if [ "$coverage" -lt 85 ]; 
-            then
+            coverage=$(sfdx force:apex:test:run --code-coverage --result-format human --target-org ci_scratch --testlevel RunLocalTests --wait 10 | grep "Overall Code Coverage" | awk '{print $4}')
+            if [ "$coverage" -lt 85 ]; then
             echo "Failed due to less code coverage. Current coverage: $coverage%"
             exit 1
             else
