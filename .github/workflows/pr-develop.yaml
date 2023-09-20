@@ -37,15 +37,16 @@ jobs:
       run: 'sfdx force:source:push -o ci_scratch'
     
     - name: Check code coverage
-      run: 'sf apex test run --code-coverage --result-format human --synchronous -o ci_scratch --test-level RunLocalTests --wait 10' 
-           if [ "$code_coverage" -lt "$required_coverage" ]; 
-           then
-           echo "Failed due to less code coverage. Current coverage: $code_coverage%"
-           exit 1
-           else
-           echo "Code coverage is sufficient. Current coverage: $code_coverage%"
-           exit 0
-           fi
+      run:  |
+            'sf apex test run --code-coverage --result-format human --synchronous -o ci_scratch --test-level RunLocalTests --wait 10' 
+            if [ "$code_coverage" -lt "$required_coverage" ]; 
+            then
+            echo "Failed due to less code coverage. Current coverage: $code_coverage%"
+            exit 1
+            else
+            echo "Code coverage is sufficient. Current coverage: $code_coverage%"
+            exit 0
+            fi
 
     - name: Delete scratch org
       if: always()
