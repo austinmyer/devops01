@@ -38,7 +38,7 @@ jobs:
     
     - name: Check code coverage
       run:  |
-            coverage=$('sf apex test run --code-coverage --result-format human --synchronous -o ci_scratch --test-level RunLocalTests --wait 10') 
+            coverage=$('sfdx force:apex:test:run --code-coverage --result-format human --target-org ci_scratch --testlevel RunLocalTests --wait 10') 
             if [ "$coverage" -lt 85 ]; 
             then
             echo "Failed due to less code coverage. Current coverage: $coverage%"
