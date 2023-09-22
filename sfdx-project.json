@@ -3,15 +3,11 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "SpaghettiCMD",
       "versionName": "ver 1.2", 
       "versionNumber": "1.2.1.NEXT"
     }
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "58.0",
-   "packageAliases": {
-    "SpaghettiCMD": "0Hoxxx"
-  }
-}
+  "sourceApiVersion": "58.0"
+   }
