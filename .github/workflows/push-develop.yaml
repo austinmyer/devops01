@@ -28,7 +28,7 @@ jobs:
       run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
     - name: Create New Package
-      run: 'sf package create --path force-app --package-type Unlocked --target-dev-hub devhub --package-type Unlocked name = "Spaghetti CMD'
+      run: 'sf package create --path force-app --package-type Unlocked --target-dev-hub devhub --package-type Unlocked name = "Spaghetti CMD"'
       
     - name: Create new version
       run: |
