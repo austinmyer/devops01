@@ -10,5 +10,8 @@
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "58.0"
+  "sourceApiVersion": "58.0",
+   "packageAliases": {
+    "Spaghetti CMD": "0Ho000000000000001"
+  }
 }
