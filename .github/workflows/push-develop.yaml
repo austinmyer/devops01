@@ -28,11 +28,11 @@ jobs:
       run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
     - name: Create New Package
-      run: 'sf package create --path force-app --package-type Unlocked --target-dev-hub devhub --package-type Unlocked --name SpaghettiCMD'
+      run: 'sf package create --path force-app --package-type Unlocked --target-dev-hub devhub --package-type Unlocked --name SpaghettiiCMD'
       
     - name: Create new version
       run: |
-        sf package version create -d force-app  -w 10 -x -p SpaghettiCMD -w 60 --code-coverage -v devhub
+        sf package version create -d force-app  -w 10 -x -p SpaghettiiCMD -w 60 --code-coverage -v devhub
         new_version_id=$(grep -o "04t[[:alnum:]]\{15\}" sfdx-project.json | tail -n1)
         echo "version_id=${new_version_id}" >> $GITHUB_ENV
     
