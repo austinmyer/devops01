@@ -27,6 +27,9 @@ jobs:
     - name: Authenticate Dev Hub
       run: 'sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d'
 
+    - name: Create New Package
+      run: 'sf package create --path force-app --package-type Unlocked --target-dev-hub devhub'
+      
     - name: Create new version
       run: |
         sf package version create -d force-app  -w 10 -x -p SpaghettiCMD -w 60 --code-coverage -v devhub
