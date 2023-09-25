@@ -11,7 +11,9 @@
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "58.0",
-   "packageAliases": {
-        "SpaghettiiiCM": "0Ho5j000000Cb7SCAS"
-    }
-   }
+  "packageAliases": {
+    "SpaghettiiiCM": "0Ho5j000000Cb7SCAS",
+    "SpaghettiiiCM@0.1.0-4": "04t5j000000daURAAY",
+    "SpaghettiiiCM@0.1.0-5": "04t5j000000daUqAAI"
+  }
+}
