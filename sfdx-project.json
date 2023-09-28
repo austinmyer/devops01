@@ -7,6 +7,14 @@
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
       "versionDescription": ""
+    },
+    {
+      "path": "force-app",
+      "package": "SpaghettiiiCMD",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": false,
+      "versionDescription": ""
     }
   ],
   "namespace": "",
@@ -14,6 +22,7 @@
   "sourceApiVersion": "58.0",
   "packageAliases": {
     "SpaghettiiiCM": "0Ho5j000000bm9UCAQ",
-    "SpaghettiiiCM@0.1.0-1": "04t5j000000J1iDAAS"
+    "SpaghettiiiCM@0.1.0-1": "04t5j000000J1iDAAS",
+    "SpaghettiiiCMD": "0Ho5j000000bm9ZCAQ"
   }
 }
