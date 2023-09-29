@@ -1,7 +1,7 @@
 name: Publish new release
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -41,6 +41,6 @@ jobs:
         tag_name=$(jq ".packageDirectories[0].versionName" sfdx-project.json | tr -d '"'| tr -d ' ')
         pkg_name=$(jq ".packageDirectories[0].package" sfdx-project.json | tr -d '"')
         git config user.name "release[bot]"
-        git config user.email "$GH_USEREMAIL"
+        git config user.email "${{secrets.GH_USEREMAIL}}"
         git tag -a "$tag_name" -m "$pkg_name $tag_name"
         git push origin "$tag_name"
